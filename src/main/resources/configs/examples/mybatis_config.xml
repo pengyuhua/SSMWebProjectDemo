@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--  1.加载外部属性文件-->
+    <properties resource="configs/mbconfig.properties" />
+    <!--  2.通过子变迁定义属性-->
+    <!--<properties>-->
+        <!--<property name="username" value="pengyuhua"/>-->
+        <!--<property name="password" value="pyh546482"/>-->
+        <!--<property name="driver" value="com.mysql.jdbc.Driver"/>-->
+        <!--<property name="driver" value="com.mysql.cj.jdbc.Driver"/>-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/mybatis_test?serverTimezone=UTC"/>-->
+    <!--</properties>-->
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/usermapper.xml"/>
+    </mappers>
+</configuration>

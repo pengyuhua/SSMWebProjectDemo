@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+    <!-- status : 这个用于设置log4j2自身内部的信息输出,可以不设置,当设置成trace时,会看到log4j2内部各种详细输出 ,默认OFF
+    monitorInterval : Log4j能够自动检测修改配置文件和重新配置本身, 设置间隔秒数。
+    %d{yyyy-MM-dd HH:mm:ss, SSS} : 日志生产时间
+    %p : 日志输出格式
+    %c : logger的名称
+    %m : 日志内容，即 logger.info("message")
+    %n : 换行符
+    %C : Java类名
+    %L : 日志输出所在行数
+    %M : 日志输出所在方法名
+    %t：表示当前线程名称
+    %-5level：输出日志级别，-5表示左对齐并且固定输出5个字符
+    %l：输出语句所在的包名、类名、函数名、行数
+    %msg：输出日志的内容
+    %n：换行
+    %F 输出所在的类文件名
+    %L 输出行号
+    %M 输出所在方法名
+    hostName : 本地机器名 hostAddress : 本地ip地址 -->
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch ="DENY"/>
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5leonMismatchvel %logger{36} - %msg%n"/>-->
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %c - %msg%n "/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <!--<Logger name="Console" level="DEBUG"/>-->
+    </Loggers>
+</Configuration>
