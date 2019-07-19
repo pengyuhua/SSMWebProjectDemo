@@ -1,9 +1,9 @@
-#使用IDEA搭建SSM项目流程
-###1、创建maven_web工程项目，创建项目时需要勾选相应的maven模块
-###2、项目创建完成后，在项目根目录下新建文件夹: target ; 然后在src/main/ 下新建java以及resoureces文件夹，并且相应设置为source root 以及 resource root 文件夹 ; 打开webapp/WEB-INF 下新建jsp 文件及以存放创建的歌jsp页面。
-###3、在resources文件夹下新建mapper文件夹用于存放mybatis的mapper文件；同时创建sprng文件夹用于存放整合spring、springMvc框架的配置文件；创建好spring文件夹后在其下创建spring-dao.xml ， spring-mvc.xml ， spring-service.xml 用于配置整合的框架。在resources文件夹下创建jdbc.properties、mybatis-config.xml 用于配置mybatis相关信息；
+## 使用IDEA搭建SSM项目流程
+ 1. 创建maven_web工程项目，创建项目时需要勾选相应的maven模块
+ 2. 项目创建完成后，在项目根目录下新建文件夹: target ; 然后在src/main/ 下新建java以及resoureces文件夹，并且相应设置为source root 以及 resource root 文件夹 ; 打开webapp/WEB-INF 下新建jsp 文件及以存放创建的歌jsp页面。
+3. 在resources文件夹下新建mapper文件夹用于存放mybatis的mapper文件；同时创建sprng文件夹用于存放整合spring、springMvc框架的配置文件；创建好spring文件夹后在其下创建spring-dao.xml ， spring-mvc.xml ， spring-service.xml 用于配置整合的框架。在resources文件夹下创建jdbc.properties、mybatis-config.xml 用于配置mybatis相关信息；
 *****
-####jdbc.properties
+#### jdbc.properties
 ````
 #jdbc.driver=com.mysql.jdbc.Driver
 jdbc.driver=com.mysql.cj.jdbc.Driver
@@ -12,7 +12,7 @@ jdbc.username=pengyuhua
 jdbc.password=pyh546482
 ````
 ***
-####mybatis-config.xml
+#### mybatis-config.xml
 ````
     <?xml version="1.0" encoding="UTF-8"?>
      <!DOCTYPE configuration
@@ -32,7 +32,7 @@ jdbc.password=pyh546482
      
  ````
  ***
- ####spring-dao.xml：
+ #### spring-dao.xml：
  ````
  <?xml version="1.0" encoding="UTF-8"?>
  <beans xmlns="http://www.springframework.org/schema/beans"
@@ -84,7 +84,7 @@ jdbc.password=pyh546482
      </bean>
 ````
 ***
-####spring-mvc.xml
+#### spring-mvc.xml
 ````
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -120,7 +120,7 @@ jdbc.password=pyh546482
     </beans>
 ````
 ***
-####spring-service.xml
+#### spring-service.xml
 ````
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -142,8 +142,8 @@ jdbc.password=pyh546482
     </beans>
 ````
 ***
-###4.添加POM 依赖
-####pom.xml
+### 4.添加POM 依赖
+#### pom.xml
 ````
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -485,7 +485,6 @@ jdbc.password=pyh546482
 
 ````
 
-###5.添加运行环境：点击run菜单下的edit configuration 选项添加tomcat运行环境
+5. 添加运行环境：点击run菜单下的edit configuration 选项添加tomcat运行环境
 
-***
-###6.找到index.jsp文件右键运行即可，至此项目搭建即可完成。
+6. 找到index.jsp文件右键运行即可，至此项目搭建即可完成。
